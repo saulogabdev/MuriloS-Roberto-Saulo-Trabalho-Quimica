@@ -1,22 +1,40 @@
 public class Metal {
-    String nomeMetal;
-    String simbolo;
-    int numOxidacao;
-    String estado;
 
-    public Metal(String nomeMetal, String simbolo, int numOxidacao, String estado) {
-        this.nomeMetal = nomeMetal;
+    private String simbolo;
+    private double potencialPadraoReducao;
+    private String nomeMetal;
+    private int eletrons;
+    private int carga;
+
+    public Metal(String simbolo, double potencialPadraoReducao, String nomeMetal, int carga) {
         this.simbolo = simbolo;
-        this.numOxidacao = numOxidacao;
-        this.estado = estado;
-    }
-
-    public String getNomeMetal() {
-        return nomeMetal;
-    }
-
-    public void setNomeMetal(String nomeMetal) {
+        this.potencialPadraoReducao = potencialPadraoReducao;
         this.nomeMetal = nomeMetal;
+        this.carga = carga;
+        this.eletrons = carga;
+    }
+
+    public String getCargaComAsterisco() {
+        if (carga == 1) {
+            return "*";
+        }
+        return "*" + carga;
+    }
+
+    public int getCarga() {
+        return carga;
+    }
+
+    public void setCarga(int carga) {
+        this.carga = carga;
+    }
+
+    public int getEletrons() {
+        return eletrons;
+    }
+
+    public void setEletrons(int eletrons) {
+        this.eletrons = eletrons;
     }
 
     public String getSimbolo() {
@@ -27,20 +45,19 @@ public class Metal {
         this.simbolo = simbolo;
     }
 
-    public int getNumOxidacao() {
-        return numOxidacao;
+    public double getPotencialPadraoReducao() {
+        return potencialPadraoReducao;
     }
 
-    public void setNumOxidacao(int numOxidacao) {
-        this.numOxidacao = numOxidacao;
+    public void setPotencialPadraoReducao(double potencialPadraoReducao) {
+        this.potencialPadraoReducao = potencialPadraoReducao;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getNomeMetal() {
+        return nomeMetal;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setNomeMetal(String nomeMetal) {
+        this.nomeMetal = nomeMetal;
     }
-    
 }
